@@ -1,6 +1,7 @@
 var currentColor=(0, 0, 0);
 var currentScene=0;
 
+//start of bitmoji code
 var hairStrand = function (strandX,strandY,strandH)
 {
     fill(54, 44, 37);
@@ -242,6 +243,7 @@ var drawBitmoji=function(x,y,size){
     drawBody(x,y,size/100);
 };
 
+//button class code
 var Button = function(config) {
     this.x = config.x || 0;
     this.y = config.y || 0;
@@ -272,6 +274,7 @@ Button.prototype.handleMouseClick = function() {
         this.onClick();
     }
 };
+
 var scenes = [];
 
 var startButton = new Button({
@@ -287,8 +290,9 @@ var startButton = new Button({
     
 });
 var nextPage = new Button({
-    x: 260,
+    x: 321,
     y: 10,
+    width:65,
     label: "Next",
    onClick: function() {
         if(currentScene > 0){
@@ -467,15 +471,16 @@ ellipse(350, 360, 50,50);
 nextPage.draw();
 };
 
-
 var pageFour = function(){
     background(119, 148, 108);
     textFont(font);
     textSize(45);
     fill(255, 255, 255);
-    text("Thank you for coloring!", 20,200);
-    if (keyIsPressed && keyCode===13){
-        splashScreen();}
+    text("Thank you for coloring!", 20,284);
+    text("Hit spacebar to restart", 52, 343);
+    drawBit(-99, -97, 100);
+    drawBitmoji(155, 4, 61);
+   
 };
 
 scenes = [splashScreen, pageOne, pageTwo, pageThree, pageFour]; //array for scenes
@@ -489,7 +494,9 @@ draw = function() {
         ellipse(mouseX, mouseY, 20,20);
         }
    }
-
+    if (keyIsPressed && keyCode === 0 && currentScene=== 4){
+        splashScreen();
+    }
 };
 
 mouseClicked = function(){  
