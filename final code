@@ -476,8 +476,8 @@ var pageFour = function(){
     textFont(font);
     textSize(45);
     fill(255, 255, 255);
-    text("Thank you for coloring!", 20,284);
-    text("Hit spacebar to restart", 52, 343);
+    text("Thank you for coloring!", 30,284);
+    text("Hit spacebar to restart", 30, 343);
     drawBit(-99, -97, 100);
     drawBitmoji(155, 4, 61);
    
