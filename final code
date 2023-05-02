@@ -1,0 +1,512 @@
+var currentColor=(0, 0, 0);
+var currentScene=0;
+
+var hairStrand = function (strandX,strandY,strandH)
+{
+    fill(54, 44, 37);
+    ellipse(149*strandH+strandX,132*strandH+strandY,strandH*8,54*strandH);
+};
+
+var head = function (x,y,h)
+{
+    noStroke();
+    fill(255,219,172);
+    ellipse(x+200*h/100,y+200*h/100,87*h/100,110*h/100);
+    fill(255, 255, 255);
+    hairStrand(79*h/100+x,118*h/100+y,h/100);
+    hairStrand(75*h/100+x,118*h/100+y,h/100);
+    hairStrand(72*h/100+x,118*h/100+y,h/100);
+    hairStrand(69*h/100+x,118*h/100+y,h/100);
+    hairStrand(65*h/100+x,118*h/100+y,h/100);
+    hairStrand(62*h/100+x,118*h/100+y,h/100);
+    hairStrand(24*h/100+x,118*h/100+y,h/100);
+    hairStrand(27*h/100+x,118*h/100+y,h/100);
+    hairStrand(31*h/100+x,118*h/100+y,h/100);
+    hairStrand(34*h/100+x,118*h/100+y,h/100);
+    hairStrand(38*h/100+x,118*h/100+y,h/100);
+    hairStrand(42*h/100+x,118*h/100+y,h/100);
+    hairStrand(47*h/100+x,118*h/100+y,h/100);
+    hairStrand(59*h/100+x,118*h/100+y,h/100);
+    hairStrand(50*h/100+x,118*h/100+y,h/100);
+    hairStrand(53*h/100+x,118*h/100+y,h/100);
+    noStroke();
+    fill(54, 44, 37);
+    rect(x+168*h/100,y+221*h/100,74*h/100,54*h/100);
+    noStroke();
+    fill(242, 206, 159);
+    rect(x+184*h/100,y+237*h/100,33*h/100,34*h/100); //neck
+    fill(255,219,172);
+    arc(x+199*h/100,y+193*h/100,88*h/100,134*h/100,0,90); //jaw right
+    fill(255,219,172);
+    arc(x+201*h/100,y+193*h/100,88*h/100,134*h/100,90,180); //jaw left
+    noStroke();
+    fill(54, 44, 37);
+    rect(x+158*h/100,y+174*h/100,15*h/100,95*h/100);
+    fill(54, 44, 37);
+    rect(x+229*h/100,y+174*h/100,15*h/100,95*h/100);
+    hairStrand(10*h/100+x,69*h/100+y,h/100);
+    hairStrand(10*h/100+x,89*h/100+y,h/100);
+    hairStrand(10*h/100+x,118*h/100+y,h/100);
+    hairStrand(13*h/100+x,118*h/100+y,h/100);
+    hairStrand(16*h/100+x,118*h/100+y,h/100);
+    hairStrand(19*h/100+x,118*h/100+y,h/100);
+    hairStrand(19*h/100+x,89*h/100+y,h/100);
+    hairStrand(19*h/100+x,70*h/100+y,h/100);
+    hairStrand(20*h/100+x,118*h/100+y,h/100);
+    hairStrand(93*h/100+x,69*h/100+y,h/100);
+    hairStrand(93*h/100+x,89*h/100+y,h/100);
+    hairStrand(93*h/100+x,118*h/100+y,h/100);
+    hairStrand(83*h/100+x,69*h/100+y,h/100);
+    hairStrand(83*h/100+x,89*h/100+y,h/100);
+    hairStrand(90*h/100+x,118*h/100+y,h/100);
+    hairStrand(86*h/100+x,118*h/100+y,h/100);
+    hairStrand(83*h/100+x,118*h/100+y,h/100);
+    fill(255, 255, 255);
+    //ellipse(x+156*h/100,y+168*h/100,9*h/100,26*h/100);
+   
+    fill(54, 44, 37);
+    arc(x+201*h/100,y+187*h/100,90*h/100,103*h/100,180,270);
+    fill(54, 44, 37);
+    arc(x+201*h/100,y+187*h/100,90*h/100,103*h/100,270,360);
+    //headband
+    fill(255, 255, 255);
+    arc(x+205*h/100,y+184*h/100,62*h/100,67*h/100,270,360);
+    fill(255, 255, 255);
+    arc(x+198*h/100,y+184*h/100,62*h/100,67*h/100,180,270);
+    fill(255, 255, 255);
+    rect(x+194*h/100,y+151*h/100,12*h/100,33*h/100);
+    fill(255,219,172);
+    //head
+    ellipse(x+226*h/100,y+212*h/100,14*h/100,65*h/100);
+    fill(255,219,172);
+    ellipse(x+196*h/100,y+181*h/100,46*h/100,48*h/100);
+    fill(255,219,172);
+    ellipse(x+174*h/100,y+212*h/100,14*h/100,65*h/100);
+    fill(255,219,172);
+    ellipse(x+206*h/100,y+181*h/100,46*h/100,48*h/100);
+    fill(255,219,172);
+    ellipse(x+196*h/100,y+181*h/100,46*h/100,48*h/100);
+    //mouth
+   
+    stroke(0, 0, 0);
+    fill(255, 255, 255);
+    arc(x+200*h/100,y+233*h/100,30*h/100, 22*h/100,1,180);
+    line(x+186*h/100,y+233*h/100,x+213*h/100,y+233*h/100);
+    line(x+187*h/100,y+238*h/100,x+212*h/100,y+238*h/100);
+    //nose
+    fill(255,219,172);
+    bezier(x+202*h/100,y+205*h/100,x+217*h/100,y+232*h/100,x+197*h/100,y+227*h/100,x+197*h/100,y+224*h/100);
+    //left eye
+    fill(255, 255, 255);
+    ellipse(x+185*h/100,y+193*h/100,19*h/100,13*h/100);
+    fill(54, 44, 37);
+    ellipse(x+185*h/100,y+193*h/100,11*h/100,11*h/100);
+    fill(0, 0, 0);
+    ellipse(x+185*h/100,y+193*h/100,5*h/100,5*h/100);
+    //right eye
+    fill(255, 255, 255);
+    ellipse(x+216*h/100,y+193*h/100,19*h/100,13*h/100);
+    fill(54, 44, 37);
+    ellipse(x+216*h/100,y+193*h/100,11*h/100,11*h/100);
+    fill(0, 0, 0);
+    ellipse(x+216*h/100,y+193*h/100,5*h/100,5*h/100);
+    //eyebrows
+    strokeWeight(2*h/100);
+    line(x+191*h/100,y+181*h/100,x+177*h/100,y+181*h/100);
+    line(x+177*h/100,y+181*h/100,x+175*h/100,y+184*h/100);
+    line(x+222*h/100,y+181*h/100,x+206*h/100,y+181*h/100);
+    line(x+223*h/100,y+181*h/100,x+226*h/100,y+184*h/100);
+};
+
+var body = function(x,y,h)
+{
+ noStroke();
+    fill(103, 173, 224);
+    arc(x+218*h/100,y+316*h/100,63*h/100,93*h/100,270,360); //shirt
+    fill(103, 173, 224);
+    arc(x+184*h/100,y+316*h/100,63*h/100,93*h/100,181,270); //shirt
+    fill(103, 173, 224);
+    rect(x+179*h/100,y+270*h/100,40*h/100,46*h/100); //shirt
+    strokeWeight(1);
+    stroke(0, 0, 0);
+    line(x+176*h/100,y+287*h/100,x+176*h/100,y+315*h/100); //arm
+    line(x+224*h/100,y+287*h/100,x+224*h/100,y+315*h/100); //arm
+    stroke(0, 0, 0);
+    fill(103, 173, 224);
+    arc(x+191*h/100,y+290*h/100,10*h/100,16*h/100,157,360);
+    line(x+187*h/100,y+293*h/100,x+191*h/100,y+299*h/100);
+    arc(x+188*h/100,y+305*h/100,10*h/100,16*h/100,-64,178);
+    arc(x+211*h/100,y+290*h/100,10*h/100,16*h/100,157,360);
+    line(x+207*h/100,y+293*h/100,x+211*h/100,y+299*h/100);
+    arc(x+208*h/100,y+305*h/100,10*h/100,16*h/100,-64,178); //initial  
+};
+   
+var drawBit = function(bitX,bitY,bitH)
+{
+  head(bitX,bitY,bitH);
+  body(bitX,bitY,bitH);
+};  
+var font = createFont("Brush Script MT");
+var currentScene=0;
+var bodyX=random(-100,100);
+var bodyY=random(-100,100);
+var drawHead=function(bodyX,bodyY, size)
+{
+
+//hair under
+noStroke();
+fill(79, 42, 42);
+ellipse(bodyX+240*size, bodyY+258*size, 71*size, 65*size);
+ellipse(bodyX+160*size, bodyY+258*size, 71*size, 65*size);
+//face
+noStroke();
+fill(240, 209, 180);
+rect(bodyX+177*size,bodyY+236*size,44*size,49*size);
+fill(252, 219, 187);
+arc(bodyX+200*size,bodyY+175*size,120*size,150*size, 180, 360);
+arc(bodyX+200*size,bodyY+172*size,130*size,150*size, 0, 360);
+//nose ring
+noFill();
+stroke(214, 195, 214);
+strokeWeight(2);
+arc(bodyX+207*size,bodyY+199*size,5*size,4*size,-120,172);
+//left side hair
+noStroke();
+fill(79, 42, 42);
+ellipse(bodyX+143*size, bodyY+139*size, 36*size, 65*size);
+ellipse(bodyX+140*size, bodyY+165*size, 36*size, 65*size);
+ellipse(bodyX+147*size, bodyY+191*size, 36*size, 65*size);
+ellipse(bodyX+142*size, bodyY+215*size, 36*size, 65*size);
+//right side hair
+ellipse(bodyX+252*size, bodyY+138*size, 36*size, 65*size);
+ellipse(bodyX+259*size, bodyY+171*size, 36*size, 65*size);
+ellipse(bodyX+253*size, bodyY+182*size, 36*size, 65*size);
+ellipse(bodyX+259*size, bodyY+215*size, 36*size, 65*size);
+fill(61, 37, 37);
+ellipse(bodyX+176*size,bodyY+167*size,16*size,14*size);
+ellipse(bodyX+220*size,bodyY+167*size,16*size,14*size);
+//left eyebrow
+stroke(54, 24, 24);
+strokeWeight(2);
+line (bodyX+185*size, bodyY+155*size, bodyX+166*size, bodyY+155*size);
+//right eyebrow
+stroke(54, 24, 24);
+strokeWeight(2);
+line (bodyX+230*size, bodyY+155*size, bodyX+210*size, bodyY+155*size);
+//mouth
+noStroke();
+fill(240, 124, 104);
+ellipse(bodyX+200*size,bodyY+221*size,40*size,13*size);
+//nose
+fill(0, 0, 0);
+ellipse(bodyX+194*size,bodyY+198*size,4*size,2*size);
+ellipse(bodyX+204*size,bodyY+198*size,4*size,2*size);
+
+};
+
+var drawBody= function(bodyX,bodyY, size) {
+//hat
+fill(245, 238, 215);
+arc(bodyX+201*size,bodyY+126*size,142*size,139*size,-180,0);
+//brim
+fill(133, 139, 153);
+arc(bodyX+200*size,bodyY+121*size,144*size,50*size,0,180);
+//shirt
+fill(46, 29, 29);
+rect(bodyX+174*size,bodyY+268*size,51*size,47*size,1*size);
+rect(bodyX+159*size,bodyY+285*size,84*size,70*size,0*size);
+noStroke();
+fill(9, 42, 133);
+rect(bodyX+132*size,bodyY+285*size,28*size,72*size,2*size);
+rect(bodyX+241*size,bodyY+285*size,28*size,72*size,2*size);
+
+//hat text
+fill(46, 52, 66);
+textFont("ariel bold", 12*size);
+text("LIFE'S SHORT",bodyX+161*size,bodyY+83*size,88,141);
+fill(83, 115, 230);
+rect(bodyX+157*size,bodyY+96*size,90*size,18*size,0*size);
+fill(46, 52, 66);
+textFont("ariel bold", 13*size);
+text("FISH HARD", bodyX+166*size,bodyY+100*size,131,153);
+
+//initials
+fill(255, 255, 255);
+textFont("ariel bold", 45*size);
+text("AS",bodyX+169*size,bodyY+301*size,102,149);
+
+};
+
+var drawBitmoji=function(x,y,size){
+    drawHead(x,y,size/100);
+    drawBody(x,y,size/100);
+};
+
+var Button = function(config) {
+    this.x = config.x || 0;
+    this.y = config.y || 0;
+    this.width = config.width || 132;
+    this.height = config.height || 52;
+    this.label = config.label || "Click";
+    this.onClick = config.onClick || function() {};
+};
+
+Button.prototype.draw = function() {
+    fill(222, 118, 7);
+    rect(this.x, this.y, this.width+2, this.height-11, 5);
+    fill(255, 255, 255);
+    textFont("bold");
+    textSize(21);
+    text(this.label, this.x+10, this.y+this.height/2);
+};
+
+Button.prototype.isMouseInside = function() {
+    return mouseX > this.x &&
+           mouseX < (this.x + this.width) &&
+           mouseY > this.y &&
+           mouseY < (this.y + this.height);
+};
+
+Button.prototype.handleMouseClick = function() {
+    if (this.isMouseInside()) {
+        this.onClick();
+    }
+};
+var scenes = [];
+
+var startButton = new Button({
+    x: 143,
+    y: 235,
+    label: "Start Game!",
+   onClick: function() {
+        if(currentScene === 0){
+            currentScene = 1;
+            scenes[currentScene]();
+        }
+    }
+    
+});
+var nextPage = new Button({
+    x: 260,
+    y: 10,
+    label: "Next",
+   onClick: function() {
+        if(currentScene > 0){
+            currentScene++;
+            scenes[currentScene]();
+        }
+    }
+    
+});
+
+var splashScreen = function ()
+{
+    background(119, 148, 108);
+    drawBit(-65,-112, 103);
+    drawBitmoji(148,-15,64);
+    startButton.draw();
+    textSize(31);
+    textFont("ariel bold",30);
+    text("Ava Stanley + Sofia Sierra", 21,370);
+    textFont(font);
+    textSize(50);
+    text("Coloring Book", 86,320);
+   
+};
+
+var pageOne = function (){ //page one of book
+background(255, 255, 255);
+stroke(0, 0, 0);
+line(400,320,0,320);
+//flower+sun
+arc(85,320,230,-84,3,156);
+arc(297,320,230,-84,3,156);
+rect(188,320,12,-104);
+ellipse(194,165,40,40);
+ellipse(245,174,60,60);
+ellipse(199,217,60,60);
+ellipse(146,188,60,60);
+ellipse(155,129,60,60);
+ellipse(217,118,60,60);
+ellipse(65,71,90,90);
+
+
+//color pallete
+fill(255, 0, 0);
+noStroke();
+ellipse(50,360,50,50);
+
+fill(0, 26, 255);
+noStroke();
+ellipse(150, 360, 50, 50);
+
+fill(255, 222, 92);
+noStroke();
+ellipse(250, 360, 50,50);
+
+fill(77, 173, 64);
+noStroke();
+ellipse(350, 360, 50,50);
+nextPage.draw();
+};
+
+//winston code from khan academy https://www.khanacademy.org/computing/computer-programming/programming/coloring/pt/coloring-with-code
+
+var pageTwo = function(){
+background(255, 255, 255);
+stroke(0, 0, 0);
+fill(255, 255, 255);
+line(400,320,0,320);
+//winston
+// face
+ellipse(165, 162, 285, 285);
+
+// eyes
+ellipse(120, 105, 40, 40);
+ellipse(257, 97, 40, 40);
+
+// mouth
+ellipse(220, 194, 120, 136);
+
+
+//color pallete
+fill(255, 0, 0);
+noStroke();
+ellipse(50,360,50,50);
+
+fill(0, 26, 255);
+noStroke();
+ellipse(150, 360, 50, 50);
+
+fill(255, 222, 92);
+noStroke();
+ellipse(250, 360, 50,50);
+
+fill(77, 173, 64);
+noStroke();
+ellipse(350, 360, 50,50);
+nextPage.draw();
+
+};
+
+var pageThree = function (){
+background(255, 255, 255);
+stroke(0, 0, 0);
+fill(255, 255, 255);
+line(400,320,0,320);
+//fishes
+var drawFishBody = function(bodyX,bodyY)
+    {ellipse (bodyX+70,bodyY+80,100,40); //Body
+    ellipse (bodyX+110,bodyY+80,10,10); //Eye
+};
+
+var drawFishTail = function (tailX, tailY)
+    {triangle(tailX+0,tailY+30,tailX+0, tailY+130,tailX+20,tailY+80); //Tail
+   
+};
+
+var drawFish = function(fishX,fishY)
+{
+    drawFishBody(fishX,fishY);
+    drawFishTail(fishX,fishY);
+};
+//seaweed
+ellipse(42,305,31,44);
+ellipse(42,273,31,44);
+ellipse(42,242,31,44);
+noStroke();
+fill(255, 255, 255);
+ellipse(42,287, 21, 44);
+ellipse(42,258, 21, 44);
+
+stroke(0, 0, 0);
+ellipse(101,305,31,44);
+ellipse(101,273,31,44);
+noStroke();
+fill(255, 255, 255);
+ellipse(101,287, 21, 44);
+//rightside
+stroke(0, 0, 0);
+ellipse(298,305,31,44);
+ellipse(298,273,31,44);
+ellipse(298,242,31,44);
+noStroke();
+fill(255, 255, 255);
+ellipse(298,287, 21, 44);
+ellipse(298,258, 21, 44);
+
+stroke(0, 0, 0);
+ellipse(354,305,31,44);
+ellipse(354,273,31,44);
+noStroke();
+fill(255, 255, 255);
+ellipse(354,287, 21, 44);
+
+stroke(0, 0, 0);
+
+drawFish(61,2);
+drawFish(139,157);
+drawFish(242,41);
+
+//color pallete
+fill(255, 0, 0);
+noStroke();
+ellipse(50,360,50,50);
+
+fill(0, 26, 255);
+noStroke();
+ellipse(150, 360, 50, 50);
+
+fill(255, 222, 92);
+noStroke();
+ellipse(250, 360, 50,50);
+
+fill(77, 173, 64);
+noStroke();
+ellipse(350, 360, 50,50);
+nextPage.draw();
+};
+
+
+var pageFour = function(){
+    background(119, 148, 108);
+    textFont(font);
+    textSize(45);
+    fill(255, 255, 255);
+    text("Thank you for coloring!", 20,200);
+    if (keyIsPressed && keyCode===13){
+        splashScreen();}
+};
+
+scenes = [splashScreen, pageOne, pageTwo, pageThree, pageFour]; //array for scenes
+splashScreen();
+
+draw = function() {
+   if (currentScene > 0 && currentScene < 4 ) {
+        if (mouseIsPressed){
+        noStroke();
+        fill(currentColor);
+        ellipse(mouseX, mouseY, 20,20);
+        }
+   }
+
+};
+
+mouseClicked = function(){  
+    if (currentScene===0){
+        startButton.handleMouseClick();}
+    if (currentScene>0) {
+        nextPage.handleMouseClick();}
+    
+    if (mouseX > 0 && mouseX<100 && mouseY >320)
+        {currentColor=color(255, 0, 0);}
+       
+    if (mouseX > 100 && mouseX<200 && mouseY >320)
+        {currentColor=color(0, 26, 255);}
+       
+    if (mouseX > 200 && mouseX < 300 && mouseY > 320)
+        {currentColor=color(255, 222, 92);}
+   
+    if (mouseX >300 && mouseX<400 && mouseY > 320)
+        {currentColor=color(77, 173, 64);}
+};
